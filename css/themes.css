@@ -1,0 +1,43 @@
+/* =========================================================
+   DARK THEME
+   theme.js sets <html data-theme="dark">. When that is
+   present, these values replace the light ones from tokens.css.
+   ========================================================= */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-bg: #0E1116;
+  --color-surface: #161A21;
+  --color-surface-2: #1D222B;
+  --color-border: #2A303B;
+  --color-border-strong: #3A4251;
+
+  --color-text: #E8EBF0;
+  --color-text-muted: #A9B2C0;
+  --color-text-subtle: #8E98A8;
+
+  --color-accent: #86A8FF;
+  --color-accent-hover: #A3BEFF;
+  --color-accent-soft: #1C2740;
+  --color-on-accent: #0E1116;
+  --color-focus: #86A8FF;
+
+  --color-success: #5FD39A;
+  --color-success-soft: #12281D;
+  --color-warning: #F2B45A;
+  --color-warning-soft: #2D2210;
+  --color-danger: #FF8F86;
+  --color-danger-soft: #301816;
+  --color-info: #86A8FF;
+  --color-info-soft: #1C2740;
+
+  --color-danger-solid: #D92D20;
+  --color-on-danger: #FFFFFF;
+
+  --color-overlay: rgba(0, 0, 0, 0.65);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
