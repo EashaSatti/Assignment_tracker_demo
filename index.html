@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="EashaForge Assignment Tracker - an offline assignment, task and deadline planner.">
+  <title>EashaForge Assignment Tracker - Live Demo</title>
+
+  <!-- Favicon embedded directly in this file, so no image file is needed -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232B59C3'/%3E%3Ctext x='16' y='23' font-family='Arial' font-size='20' font-weight='700' text-anchor='middle' fill='white'%3EE%3C/text%3E%3C/svg%3E">
+
+  <!-- Styles: order matters. Tokens first, then themes, then everything that uses them. -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+  <link rel="stylesheet" href="css/demo.css">
+
+  <!-- DATA LAYER + THEME. These run in the <head> so the saved theme is applied
+       before the page paints (no light-mode flash). They contain no page code.
+       Order matters: each file uses the ones above it. -->
+  <script src="js/core/utils.js"></script>
+  <script src="js/core/schema.js"></script>
+  <script src="js/core/migrations.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/store.js"></script>
+  <script src="js/core/theme.js"></script>
+</head>
+
+<body>
+  <a class="skip-link" id="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+
+    <!-- Sidebar (desktop) / icon rail (tablet). Hidden on mobile. -->
+    <aside class="sidebar">
+      <a class="brand" href="#/dashboard" aria-label="EashaForge Assignment Tracker home">
+        <span class="brand__mark" aria-hidden="true">E</span>
+        <span class="brand__text">
+          <span class="brand__name">EashaForge</span>
+          <span class="brand__product">Assignment Tracker</span>
+        </span>
+      </a>
+      <nav class="sidebar__nav" id="sidebar-nav" aria-label="Main navigation"></nav>
+      <p class="sidebar__footer">Live demo. Changes reset when you refresh.</p>
+    </aside>
+
+    <div class="app__main">
+      <header class="topbar">
+        <a class="brand brand--compact" href="#/dashboard" aria-label="EashaForge Assignment Tracker home">
+          <span class="brand__mark" aria-hidden="true">E</span>
+        </a>
+        <h1 class="topbar__title" id="page-title">EashaForge</h1>
+        <div class="topbar__actions">
+          <a class="icon-btn" id="bell-link" href="#/notifications" aria-label="Notifications">
+            <span data-icon="bell"></span>
+            <span class="icon-btn__badge" id="notification-badge" hidden></span>
+          </a>
+          <button class="icon-btn" id="theme-toggle" type="button"></button>
+        </div>
+      </header>
+
+      <main class="main" id="main" tabindex="-1">
+        <noscript>
+          <p class="banner banner--warning">EashaForge needs JavaScript turned on in your browser to work.</p>
+        </noscript>
+        <!-- Screens are drawn into this element by the router -->
+        <div class="view" id="view"></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Mobile bottom navigation (filled in by shell.js) -->
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Mobile navigation"></nav>
+
+  <!-- Toast messages appear here -->
+  <div class="toast-region" id="toast-region" role="status" aria-live="polite"></div>
+
+  <!-- INTERFACE scripts: ORDER MATTERS. A file can only use things defined above it. -->
+  <script src="js/core/config.js"></script>
+  <script src="js/logic/assignment-selectors.js"></script>
+  <script src="js/logic/task-selectors.js"></script>
+  <script src="js/logic/dashboard-selectors.js"></script>
+  <script src="js/logic/calendar-selectors.js"></script>
+  <script src="js/logic/sample-data.js"></script>
+  <script src="js/logic/notification-selectors.js"></script>
+  <script src="js/logic/analytics-selectors.js"></script>
+  <script src="js/ui/icons.js"></script>
+  <script src="js/core/router.js"></script>
+  <script src="js/ui/components/modal.js"></script>
+  <script src="js/ui/components/toast.js"></script>
+  <script src="js/ui/components/confirm.js"></script>
+  <script src="js/ui/components/onboarding.js"></script>
+  <script src="js/ui/shell.js"></script>
+  <script src="js/ui/views/placeholders.js"></script>
+  <script src="js/ui/views/courses.js"></script>
+  <script src="js/ui/views/assignments.js"></script>
+  <script src="js/ui/views/tasks.js"></script>
+  <script src="js/ui/views/dashboard.js"></script>
+  <script src="js/ui/views/calendar.js"></script>
+  <script src="js/ui/views/notifications.js"></script>
+  <script src="js/ui/views/analytics.js"></script>
+  <script src="js/ui/views/settings.js"></script>
+  <script src="js/ui/views/guide.js"></script>
+  <!-- Public demo: controller loads last, right before the app starts -->
+  <script src="js/demo/demo.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
